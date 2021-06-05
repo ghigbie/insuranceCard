@@ -5,7 +5,10 @@ const Display = () => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image style={styles.image}></Image>
+        <Image
+          source={require('./test_data/fake_card.jpeg')}
+          style={styles.image}
+        />
       </View>
     </View>
   );
@@ -24,6 +27,8 @@ const styles = StyleSheet.create({
     borderColor: '#4ba2fa',
   },
   image: {
+    height: '100%',
+    width: '100%',
     resizeMode: 'contain',
   },
 });
