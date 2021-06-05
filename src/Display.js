@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
 const Display = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}></View>
+      <View style={styles.imageContainer}>
+        <Image style={styles.image}></Image>
+      </View>
     </View>
   );
 };
@@ -16,12 +18,13 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#e4e4e4',
     marginVertical: 26,
     marginHorizontal: 14,
+    borderColor: '#4ba2fa',
   },
-  text: {
-    color: 'yellow',
+  image: {
+    resizeMode: 'contain',
   },
 });
 
