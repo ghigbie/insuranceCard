@@ -1,3 +1,5 @@
-// import React from 'react';
+import React, {creatContext} from 'react';
 
-// export default React.creatContext({});
+export default creatContext({
+  isFirstLogin: true,
+});
