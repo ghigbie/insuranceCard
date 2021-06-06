@@ -17,14 +17,14 @@ const Display = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'purple',
+    backgroundColor: '#cfcfcf',
   },
   imageContainer: {
     flex: 1,
     backgroundColor: '#e4e4e4',
-    marginVertical: 26,
-    marginHorizontal: 14,
-    borderColor: '#4ba2fa',
+    margin: 8,
+    borderColor: '#aaa',
+    borderWidth: 1,
   },
   image: {
     height: '100%',
