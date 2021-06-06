@@ -1,28 +1,24 @@
-import React, {useState} from 'react';
+import 'react-native-gesture-handler';
+import React from 'react';
 import {View, Modal, Pressable, Text, StyleSheet, Alert} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import Capture from './Capture';
 import Display from './Display';
-import WarningModal from './common/WarningModal';
 import RoundedButton from './common/RoundedButton';
 
-const MainNavigation = () => {
-  const [isFirstLogin, setIsFirstLogin] = useState(true);
-  const warningText =
-    'Please be aware that not all law enforcment officers will accept an image of an insurance card. By tapping the "I Understand" button below, you ackwoldege that this app may not function as a substitute for an actual auto insurance card in all situations where such card is requied by law.';
+const {Navigator, Screen} = createStackNavigator();
 
+const MainNavigation = () => {
   return (
-    <View style={styles.container}>
-      <WarningModal
-        warningTitle={'Warning!'}
-        warningText={warningText}
-        closeButtonText={'I Understand'}
-      />
-      <Display />
-      <View style={styles.buttonContainer}>
-        <RoundedButton buttonText={'Lock Photo'} />
-        <RoundedButton buttonText={'Snap Photo'} />
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Navigator initialRouteName="Display" r>
+          <Screen name="Display" component={Display} />
+          <Screen name="Capture" component={Capture} />
+        </Navigator>
       </View>
-    </View>
+    </NavigationContainer>
   );
 };
 
