@@ -26,7 +26,9 @@ const RoundedButton = ({
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 18,
+    borderRadius: 20,
+    padding: 12,
+    elevation: 2,
     justifyContent: 'center',
     alignItems: 'center',
   },
