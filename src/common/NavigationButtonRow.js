@@ -6,17 +6,19 @@ const NavigationButtonRow = ({navigation}) => {
   return (
     <View style={styles.container}>
       <RoundedButton
-        buttonText={'Lock'}
+        backgroundColor={'#ffc107'}
+        textColor={'#000'}
+        buttonText={'Lock Photo'}
         onPress={() => {
-          console.log('lock pressed');
-          console.log('secondary');
+          navigation.navigate('Display');
         }}
       />
       <RoundedButton
+        backgroundColor={'#28a745'}
+        textColor={'#fff'}
         buttonText={'Take Photo'}
         onPress={() => {
-          console.log('take photo pressed');
-          console.log('secondary');
+          navigation.navigate('Capture');
         }}
       />
     </View>
@@ -24,9 +26,10 @@ const NavigationButtonRow = ({navigation}) => {
 };
 const styles = StyleSheet.create({
   container: {
+    paddingBottom: 12,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    paddingVertical: 12,
+    alignItems: 'center',
   },
 });
 export default NavigationButtonRow;

@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, Image} from 'react-native';
-import WarningModal from './common/WarningModal';
+import WarningModal from './../common/WarningModal';
+import NavigationButtonRow from './../common/NavigationButtonRow';
 
 const Display = ({navigation}) => {
   const warningText =
@@ -15,10 +16,11 @@ const Display = ({navigation}) => {
       />
       <View style={styles.imageContainer}>
         <Image
-          source={require('./test_data/fake_card.jpeg')}
+          source={require('./../test_data/fake_card.jpeg')}
           style={styles.image}
         />
       </View>
+      <NavigationButtonRow navigation={navigation} />
     </View>
   );
 };

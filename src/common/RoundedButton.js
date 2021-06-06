@@ -5,7 +5,6 @@ const RoundedButton = ({
   textColor = '#fff',
   backgroundColor = '#3d3edb',
   buttonText = 'Press Me',
-
   onPress,
 }) => {
   return (
