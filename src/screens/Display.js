@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Image} from 'react-native';
 import WarningModal from './common/WarningModal';
 
-const Display = () => {
+const Display = ({navigation}) => {
   const warningText =
     'Please be aware that not all law enforcment officers will accept an image of an insurance card. By tapping the "I Understand" button below, you ackwoldege that this app may not function as a substitute for an actual auto insurance card in all situations where such card is requied by law.';
 
