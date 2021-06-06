@@ -5,8 +5,7 @@ const RoundedButton = ({
   textColor = '#fff',
   backgroundColor = '#3d3edb',
   buttonText = 'Press Me',
-  width = 120,
-  height = 48,
+
   onPress,
 }) => {
   return (
@@ -15,7 +14,7 @@ const RoundedButton = ({
         console.log('On Press Called');
         onPress && onPress();
       }}>
-      <View style={{...styles.container, backgroundColor, width, height}}>
+      <View style={{...styles.container, backgroundColor}}>
         <Text style={{...styles.textStyles, color: textColor}}>
           {buttonText}
         </Text>
@@ -27,14 +26,13 @@ const RoundedButton = ({
 const styles = StyleSheet.create({
   container: {
     borderRadius: 20,
-    padding: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     elevation: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   textStyles: {
     fontWeight: '600',
-    fontSize: 18,
+    fontSize: 16,
   },
 });
 

@@ -68,11 +68,12 @@ const styles = StyleSheet.create({
   warningTitle: {
     color: '#dc3545',
     fontWeight: '600',
-    fontSize: 18,
+    fontSize: 20,
     marginBottom: 14,
   },
   textStyle: {
     color: 'white',
+    fontSize: 14,
     fontWeight: '600',
     textAlign: 'center',
   },
