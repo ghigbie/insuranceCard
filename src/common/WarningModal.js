@@ -1,37 +1,34 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, Modal, Pressable, StyleSheet} from 'react-native';
-import AppContext from './../context/AppContext';
 
 const WarningModal = ({
   warningTitle = 'warning',
   warningText = 'Think twice before doing this',
   closeButtonText = 'I get it',
+  isModalOpen,
+  onPressClose,
 }) => {
-  const [isFirstLogin, setIsFirstLogin] = useState(true);
-
   return (
-    <AppContext.Consumer>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={isFirstLogin}
-        onRequestClose={() => {
-          setIsFirstLogin(!setIsFirstLogin);
-        }}
-        style={styles.Modal}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.warningTitle}>{warningTitle}</Text>
-            <Text style={styles.modalText}>{warningText}</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setIsFirstLogin(!isFirstLogin)}>
-              <Text style={styles.textStyle}> {closeButtonText}</Text>
-            </Pressable>
-          </View>
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={isModalOpen}
+      onRequestClose={() => {}}
+      style={styles.Modal}>
+      <View style={styles.centeredView}>
+        <View style={styles.modalView}>
+          <Text style={styles.warningTitle}>{warningTitle}</Text>
+          <Text style={styles.modalText}>{warningText}</Text>
+          <Pressable
+            style={[styles.button, styles.buttonClose]}
+            onPress={() => {
+              onPressClose();
+            }}>
+            <Text style={styles.textStyle}> {closeButtonText}</Text>
+          </Pressable>
         </View>
-      </Modal>
-    </AppContext.Consumer>
+      </View>
+    </Modal>
   );
 };
 
