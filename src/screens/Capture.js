@@ -18,7 +18,6 @@ const Capture = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text>Capture</Text>
       <WarningModal
         warningTitle={'Warning!'}
         warningText={warningText}
@@ -26,6 +25,7 @@ const Capture = ({navigation}) => {
         isModalOpen={isFirstPhotoCapture}
         onPressClose={togglePhotoWarningHandler}
       />
+      <View style={styles.imageCaptureContainer} />
       <NavigationButtonRow navigation={navigation} />
     </View>
   );
@@ -34,7 +34,14 @@ const Capture = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#cfcfcf',
+  },
+  imageCaptureContainer: {
+    flex: 1,
+    backgroundColor: '#000',
+    margin: 8,
+    borderColor: '#0101ae',
+    borderWidth: 3,
   },
 });
 
